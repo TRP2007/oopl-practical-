@@ -1,0 +1,409 @@
+import java.util.Scanner;
+
+// Superclass
+class Animal
+{
+    // Private data members
+    private String animalName;
+    private String animalType;
+
+    // Public method to accept animal details
+    public void getAnimalDetails(String name, String type)
+    {
+        animalName = name;
+        animalType = type;
+    }
+
+    // Public method to display animal details
+    public void displayAnimal()
+    {
+        System.out.println("Animal Name : " + animalName);
+        System.out.println("Animal Type : " + animalType);
+    }
+}
+
+// Subclass inheriting superclass
+public class Dog extends Animal
+{
+    // Private data member
+    private int age;
+
+    // Public method to accept dog age
+    public void getAge(int age)
+    {
+        this.age = age;
+    }
+
+    // Public method to display dog details
+    public void displayDog()
+    {
+        System.out.println("Dog Age     : " + age + " Years");
+
+        if(age >= 5)
+        {
+            System.out.println("Category    : Adult Dog");
+        }
+        else
+        {
+            System.out.println("Category    : Young Dog");
+        }
+    }
+
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+
+        Dog d = new Dog();
+
+        System.out.print("Enter Animal Name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter Animal Type: ");
+        String type = sc.nextLine();
+
+        System.out.print("Enter Dog Age: ");
+        int age = sc.nextInt();
+
+        // Calling superclass method
+        d.getAnimalDetails(name, type);
+
+        // Calling subclass method
+        d.getAge(age);
+
+        System.out.println("\n===== DOG DETAILS =====");
+
+        // Display methods
+        d.displayAnimal();
+        d.displayDog();
+
+        sc.close();
+    }
+}
+
+Here is a **complete SPPU 2nd Year AIDS OOPL Practical Exam Theory** for your Java program.
+
+
+# 📘 1. Problem Statement (Simple Explanation)
+
+The program demonstrates **Single Inheritance in Java** using an **Animal–Dog relationship**.
+
+* The superclass `Animal` stores general information like animal name and type.
+* The subclass `Dog` inherits properties of `Animal` and adds specific information like dog age and category (Adult/Young).
+* The program takes user input and displays complete dog details using inheritance.
+
+👉 Purpose:
+To understand how **inheritance and data reuse** work in object-oriented programming.
+
+---
+
+# 📘 2. Concepts Used (Definitions with Simple Meaning)
+
+## 🔹 Class
+
+A class is a blueprint used to create objects.
+👉 Example: `Animal`, `Dog`
+
+---
+
+## 🔹 Object
+
+An object is a real instance of a class.
+👉 Example: `Dog d = new Dog();`
+
+---
+
+## 🔹 Inheritance
+
+It is a mechanism where one class acquires properties of another class.
+👉 Example:
+`Dog extends Animal`
+
+✔ Advantage:
+
+* Code reusability
+* Easy maintenance
+
+---
+
+## 🔹 Superclass
+
+The parent class from which properties are inherited.
+👉 Example: `Animal`
+
+---
+
+## 🔹 Subclass
+
+The child class that inherits properties from superclass.
+👉 Example: `Dog`
+
+---
+
+## 🔹 Method
+
+A block of code that performs a specific task.
+👉 Example: `displayAnimal()`, `displayDog()`
+
+---
+
+## 🔹 private keyword
+
+It restricts access to variables within the same class only.
+👉 Example: `private String animalName;`
+
+---
+
+## 🔹 public keyword
+
+It allows access from outside the class.
+
+---
+
+## 🔹 this keyword
+
+Refers to the current object of the class.
+👉 Example: `this.age = age;`
+
+---
+
+## 🔹 Scanner Class
+
+Used to take input from the user.
+👉 Example:
+
+```java
+Scanner sc = new Scanner(System.in);
+```
+
+---
+
+## 🔹 String
+
+A class used to store text data.
+👉 Example: `"Dog", "Animal"`
+
+---
+
+## 🔹 static keyword
+
+Used for memory management and allows main method execution without object creation.
+
+---
+
+# 📘 3. Flowchart (Text Form)
+
+```
+START
+  ↓
+Create Scanner Object
+  ↓
+Create Dog Object
+  ↓
+Input Animal Name
+  ↓
+Input Animal Type
+  ↓
+Input Dog Age
+  ↓
+Store values using getAnimalDetails()
+  ↓
+Store age using getAge()
+  ↓
+Display Animal Details
+  ↓
+Display Dog Details
+  ↓
+Check Age Condition:
+   If age >= 5 → Adult Dog
+   Else → Young Dog
+  ↓
+Display Category
+  ↓
+END
+```
+
+---
+
+# 📘 4. Algorithm (Very Detailed Steps)
+
+## Step 1:
+
+Start the program execution.
+
+## Step 2:
+
+Create a `Scanner` object to accept user input.
+
+👉 Purpose: To take runtime input from user.
+
+---
+
+## Step 3:
+
+Create an object of subclass `Dog`.
+
+👉 Purpose: Object is required to access class methods.
+
+---
+
+## Step 4:
+
+Accept input:
+
+* Animal Name
+* Animal Type
+* Dog Age
+
+👉 Purpose: To store runtime data for processing.
+
+---
+
+## Step 5:
+
+Call `getAnimalDetails(name, type)` method.
+
+👉 Purpose:
+Stores animal name and type in superclass variables.
+
+---
+
+## Step 6:
+
+Call `getAge(age)` method.
+
+👉 Purpose:
+Stores age in subclass variable.
+
+---
+
+## Step 7:
+
+Call `displayAnimal()` method.
+
+👉 Purpose:
+Displays general animal information.
+
+---
+
+## Step 8:
+
+Call `displayDog()` method.
+
+👉 Purpose:
+Displays dog age and category.
+
+---
+
+## Step 9:
+
+Inside `displayDog()`:
+Check condition:
+
+* If age ≥ 5 → Adult Dog
+* Else → Young Dog
+
+👉 Purpose:
+To classify dog based on age.
+
+---
+
+## Step 10:
+
+Display final output.
+
+## Step 11:
+
+Stop execution and close scanner.
+
+---
+
+# 📘 5. Working of Each Method
+
+## 🔹 getAnimalDetails(String name, String type)
+
+* Stores animal name and type
+* Used to initialize superclass data
+
+---
+
+## 🔹 displayAnimal()
+
+* Prints animal name and type
+* Shows inherited data in readable format
+
+---
+
+## 🔹 getAge(int age)
+
+* Stores dog age using `this.age`
+* Used to assign subclass-specific data
+
+---
+
+## 🔹 displayDog()
+
+* Displays age of dog
+* Checks condition:
+
+  * ≥ 5 → Adult Dog
+  * < 5 → Young Dog
+* Classifies dog based on logic
+
+---
+
+## 🔹 main() method
+
+* Entry point of program
+* Handles input, object creation, and method calls
+
+---
+
+# 📘 6. Input–Output Explanation
+
+## 🔹 Input Required:
+
+User must enter:
+
+* Animal Name (String)
+* Animal Type (String)
+* Dog Age (Integer)
+
+---
+
+## 🔹 Output Displayed:
+
+Program shows:
+
+* Animal Name
+* Animal Type
+* Dog Age
+* Dog Category (Adult / Young)
+
+---
+
+## 🔹 Sample Output:
+
+```
+Enter Animal Name: Bruno
+Enter Animal Type: Mammal
+Enter Dog Age: 6
+
+===== DOG DETAILS =====
+Animal Name : Bruno
+Animal Type : Mammal
+Dog Age     : 6 Years
+Category    : Adult Dog
+```
+
+---
+
+# 📌 Final Exam Tip (Important)
+
+👉 This program mainly tests:
+
+* Inheritance
+* Object creation
+* Method usage
+* Conditional logic
+* Encapsulation (private variables)
+

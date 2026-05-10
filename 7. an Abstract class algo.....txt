@@ -1,0 +1,395 @@
+import java.util.Scanner;
+
+// Abstract class
+abstract class Employee
+{
+    // Private data members
+    private String name;
+    private double salary;
+
+    // Method to accept employee details
+    public void getDetails(String name, double salary)
+    {
+        this.name = name;
+        this.salary = salary;
+    }
+
+    // Getter method for name
+    public String getName()
+    {
+        return name;
+    }
+
+    // Getter method for salary
+    public double getSalary()
+    {
+        return salary;
+    }
+
+    // Abstract method
+    public abstract void calculateBonus();
+}
+
+// Subclass extending abstract class
+public class Manager extends Employee
+{
+    // Implementing abstract method
+    public void calculateBonus()
+    {
+        double bonus = getSalary() * 0.10;
+
+        System.out.println("\n===== EMPLOYEE DETAILS =====");
+        System.out.println("Employee Name : " + getName());
+        System.out.println("Salary        : " + getSalary());
+        System.out.println("Bonus         : " + bonus);
+    }
+
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+
+        Manager m = new Manager();
+
+        System.out.print("Enter Employee Name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter Salary: ");
+        double salary = sc.nextDouble();
+
+        // Calling method of abstract class
+        m.getDetails(name, salary);
+
+        // Calling implemented abstract method
+        m.calculateBonus();
+
+        sc.close();
+    }
+}
+
+Here is your **SPPU 2nd Year AIDS OOPL Practical Exam Theory (Complete + Exam Ready)** based on your Java program.
+
+---
+
+# 🟦 **TITLE**
+
+**Implementation of Abstract Class and Method Overriding in Java for Employee Bonus Calculation**
+
+---
+
+# 🟦 **AIM**
+
+To implement and study **Abstract Class, Inheritance, Encapsulation, and Method Overriding** in Java by developing a program to calculate employee bonus.
+
+---
+
+# 🟦 **PROBLEM STATEMENT (SIMPLE EXPLANATION)**
+
+In an organization, employee details such as name and salary are stored securely. The company provides a bonus to employees based on their salary.
+
+This program:
+
+* Stores employee details using an abstract class
+* Uses inheritance to extend employee functionality
+* Calculates bonus as 10% of salary
+* Displays employee details with bonus
+
+👉 Objective: To understand how abstraction and inheritance help in designing secure and reusable code.
+
+---
+
+# 🟦 **DEFINITIONS OF ALL CONCEPTS USED**
+
+## 🔹 Class
+
+A class is a blueprint used to create objects. It contains variables and methods.
+
+---
+
+## 🔹 Object
+
+An object is an instance of a class used to access methods and variables.
+
+---
+
+## 🔹 Abstract Class
+
+A class that cannot be instantiated and may contain abstract methods.
+
+👉 Used to provide structure and force subclasses to implement specific behavior.
+
+---
+
+## 🔹 Abstract Method
+
+A method without a body that must be implemented in the subclass.
+
+---
+
+## 🔹 Inheritance
+
+A mechanism where one class acquires properties of another class.
+
+Example:
+
+```java
+class Manager extends Employee
+```
+
+---
+
+## 🔹 Method Overriding
+
+Redefining a parent class method in the child class with the same signature.
+
+---
+
+## 🔹 Encapsulation
+
+Binding data and methods together and restricting direct access using private variables.
+
+---
+
+## 🔹 Scanner Class
+
+A built-in Java class used to take input from the user.
+
+---
+
+## 🔹 String
+
+A class in Java used to store text (sequence of characters).
+
+---
+
+## 🔹 static
+
+A keyword that allows a method to run without creating an object.
+
+Used in:
+
+```java
+public static void main(String args[])
+```
+
+---
+
+## 🔹 void
+
+Means the method does not return any value.
+
+---
+
+## 🔹 new
+
+Used to create an object in heap memory.
+
+---
+
+## 🔹 this
+
+Refers to the current object of the class.
+
+---
+
+# 🟦 **FLOWCHART (TEXT FORMAT)**
+
+1. Start
+2. Create abstract class Employee
+3. Define private variables (name, salary)
+4. Create method getDetails()
+5. Create getter methods
+6. Declare abstract method calculateBonus()
+7. Create subclass Manager
+8. Override calculateBonus()
+9. Create Scanner object
+10. Take input (name, salary)
+11. Create Manager object
+12. Store data using getDetails()
+13. Calculate and display bonus
+14. Stop
+
+---
+
+# 🟦 **ALGORITHM (DETAILED NUMBERED STEPS)**
+
+1. Start the program execution.
+   Purpose: Begin Java program lifecycle.
+
+2. Define an abstract class Employee.
+   Purpose: Provide a base structure for employee-related data.
+
+3. Declare private variables name and salary.
+   Purpose: Store employee information securely using encapsulation.
+
+4. Create method getDetails().
+   Purpose: Assign input values to class variables.
+
+5. Use getter methods getName() and getSalary().
+   Purpose: Provide controlled access to private variables.
+
+6. Declare abstract method calculateBonus().
+   Purpose: Force subclass to implement bonus calculation logic.
+
+7. Create subclass Manager using inheritance.
+   Purpose: Reuse Employee class properties.
+
+8. Override calculateBonus() method.
+   Purpose: Provide specific implementation for bonus calculation.
+
+9. Compute bonus as 10% of salary.
+   Purpose: Apply business logic for salary-based bonus.
+
+10. Display employee details and bonus.
+    Purpose: Show final output to user.
+
+11. Create Scanner object in main method.
+    Purpose: Accept user input from keyboard.
+
+12. Take employee name and salary as input.
+    Purpose: Provide runtime data to program.
+
+13. Create object of Manager class.
+    Purpose: Access class methods and memory allocation.
+
+14. Call getDetails() method.
+    Purpose: Store input values in object.
+
+15. Call calculateBonus() method.
+    Purpose: Perform calculation and display result.
+
+16. Close Scanner object.
+    Purpose: Release system resources.
+
+17. End program execution.
+    Purpose: Stop Java program.
+
+---
+
+# 🟦 **WORKING OF METHODS**
+
+## 🔹 getDetails()
+
+* Stores employee name and salary into class variables.
+* Purpose: Initialize object data.
+
+---
+
+## 🔹 getName()
+
+* Returns employee name.
+* Purpose: Access private variable safely.
+
+---
+
+## 🔹 getSalary()
+
+* Returns employee salary.
+* Purpose: Used in bonus calculation.
+
+---
+
+## 🔹 calculateBonus()
+
+* Implements abstract method.
+* Calculates bonus = 10% of salary.
+* Displays employee details.
+
+👉 Purpose: Demonstrates method overriding and runtime polymorphism.
+
+---
+
+# 🟦 **INPUT – OUTPUT EXPLANATION**
+
+## 🔹 Input Required:
+
+* Employee Name (String)
+* Employee Salary (Decimal number)
+
+Example:
+
+```
+Enter Employee Name: Rahul
+Enter Salary: 50000
+```
+
+---
+
+## 🔹 Output Displayed:
+
+* Employee Name
+* Salary
+* Calculated Bonus (10%)
+
+Example:
+
+```
+===== EMPLOYEE DETAILS =====
+Employee Name : Rahul
+Salary        : 50000.0
+Bonus         : 5000.0
+```
+
+---
+
+# 🟦 **VIVA QUESTIONS (IMPORTANT FOR EXAM)**
+
+## 1. Why abstract class is used?
+
+👉 To provide a common structure and enforce method implementation in subclasses.
+
+---
+
+## 2. Can we create object of abstract class?
+
+👉 No, because it may contain incomplete methods.
+
+---
+
+## 3. What is method overriding?
+
+👉 Redefining a parent class method in child class with same signature.
+
+---
+
+## 4. Why encapsulation is used?
+
+👉 To protect data using private variables.
+
+---
+
+## 5. What is the use of Scanner class?
+
+👉 To take input from user during runtime.
+
+---
+
+## 6. Why main method is static?
+
+👉 So JVM can execute it without creating an object.
+
+---
+
+## 7. Difference between abstract class and normal class?
+
+👉 Abstract class may contain abstract methods; normal class does not.
+
+---
+
+## 8. Why inheritance is used?
+
+👉 For code reusability and extending functionality.
+
+---
+
+## 9. What is runtime polymorphism?
+
+👉 Method overriding executed during runtime.
+
+---
+
+## 10. Why getters are used?
+
+👉 To access private variables safely outside the class.
+
+---
+

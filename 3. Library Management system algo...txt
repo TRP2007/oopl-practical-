@@ -1,0 +1,552 @@
+import java.util.Scanner;
+
+class Book
+{
+    int bookId;
+    String bookName;
+    boolean isIssued;
+
+    // Static variable
+    static int totalBooks = 0;
+
+    // Constructor
+    Book(int id, String name)
+    {
+        bookId = id;
+        bookName = name;
+        isIssued = false;
+
+        totalBooks++;
+    }
+
+    // Display book details
+    void displayBook()
+    {
+        System.out.println("Book ID : " + bookId);
+        System.out.println("Book Name : " + bookName);
+
+        if(isIssued)
+        {
+            System.out.println("Status : Issued");
+        }
+        else
+        {
+            System.out.println("Status : Available");
+        }
+    }
+
+    // Issue book
+    void issueBook()
+    {
+        if(!isIssued)
+        {
+            isIssued = true;
+            System.out.println(bookName + " issued successfully.");
+        }
+        else
+        {
+            System.out.println(bookName + " is already issued.");
+        }
+    }
+
+    // Return book
+    void returnBook()
+    {
+        if(isIssued)
+        {
+            isIssued = false;
+            System.out.println(bookName + " returned successfully.");
+        }
+        else
+        {
+            System.out.println(bookName + " was not issued.");
+        }
+    }
+
+    // Static method
+    static void showTotalBooks()
+    {
+        System.out.println("Total Books : " + totalBooks);
+    }
+}
+
+class LibraryManagement
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+
+        // Books added directly in code
+        Book b1 = new Book(101, "Java");
+        Book b2 = new Book(102, "Python");
+        Book b3 = new Book(103, "Data Structure");
+
+        int choice;
+
+        do
+        {
+            System.out.println("\n===== LIBRARY MANAGEMENT SYSTEM =====");
+            System.out.println("1. View Books");
+            System.out.println("2. Issue Book");
+            System.out.println("3. Return Book");
+            System.out.println("4. Total Books");
+            System.out.println("5. Exit");
+
+            System.out.print("Enter choice : ");
+            choice = sc.nextInt();
+
+            switch(choice)
+            {
+                case 1:
+
+                    b1.displayBook();
+                    System.out.println();
+
+                    b2.displayBook();
+                    System.out.println();
+
+                    b3.displayBook();
+
+                    break;
+
+                case 2:
+
+                    System.out.println("Enter Book ID to issue:");
+                    int issueId = sc.nextInt();
+
+                    if(issueId == 101)
+                    {
+                        b1.issueBook();
+                    }
+                    else if(issueId == 102)
+                    {
+                        b2.issueBook();
+                    }
+                    else if(issueId == 103)
+                    {
+                        b3.issueBook();
+                    }
+                    else
+                    {
+                        System.out.println("Book not found.");
+                    }
+
+                    break;
+
+                case 3:
+
+                    System.out.println("Enter Book ID to return:");
+                    int returnId = sc.nextInt();
+
+                    if(returnId == 101)
+                    {
+                        b1.returnBook();
+                    }
+                    else if(returnId == 102)
+                    {
+                        b2.returnBook();
+                    }
+                    else if(returnId == 103)
+                    {
+                        b3.returnBook();
+                    }
+                    else
+                    {
+                        System.out.println("Book not found.");
+                    }
+
+                    break;
+
+                case 4:
+
+                    Book.showTotalBooks();
+
+                    break;
+
+                case 5:
+
+                    System.out.println("Program Ended.");
+                    break;
+
+                default:
+
+                    System.out.println("Invalid Choice.");
+            }
+
+        } while(choice != 5);
+
+        sc.close();
+    }
+}
+Here is your **SPPU 2nd Year AIDS OOPL Practical Exam Theory (Exam-ready + complete)** for the **Library Management System using Java OOP concepts**.
+
+---
+
+# 🟦 **TITLE**
+
+**Implementation of Library Management System using Classes, Objects, Constructor, Static Method, and Control Statements in Java**
+
+---
+
+# 🟦 **AIM**
+
+To design and implement a **Library Management System** in Java using **object-oriented programming concepts such as class, object, constructor, static keyword, methods, and control statements**.
+
+---
+
+# 🟦 **PROBLEM STATEMENT (SIMPLE EXPLANATION)**
+
+A library system is required to manage books where users can:
+
+* View available books
+* Issue books
+* Return books
+* Check total number of books
+
+This program:
+
+* Stores book details using a class
+* Uses constructor to initialize book data
+* Tracks issued/available status
+* Uses static variable to count total books
+* Provides menu-driven system for operations
+
+👉 Objective: To understand real-world application of OOP concepts in Java.
+
+---
+
+# 🟦 **DEFINITION OF ALL CONCEPTS USED**
+
+---
+
+## 🔹 Class
+
+A class is a blueprint used to define properties and behaviors of objects.
+
+Example:
+
+```java id="7y5s9d"
+class Book
+```
+
+---
+
+## 🔹 Object
+
+An object is an instance of a class used to access data and methods.
+
+Example:
+
+```java id="k9v2qp"
+Book b1 = new Book(101, "Java");
+```
+
+---
+
+## 🔹 Constructor
+
+A special method used to initialize objects automatically.
+
+Example:
+
+```java id="b7j2qa"
+Book(int id, String name)
+```
+
+👉 Used when object is created.
+
+---
+
+## 🔹 Static Variable
+
+A variable shared by all objects of a class.
+
+Example:
+
+```java id="p3n8xv"
+static int totalBooks = 0;
+```
+
+👉 Same value for all objects.
+
+---
+
+## 🔹 Static Method
+
+A method that belongs to class, not object.
+
+Example:
+
+```java id="x8m2lq"
+static void showTotalBooks()
+```
+
+---
+
+## 🔹 Method
+
+A block of code that performs a specific task.
+
+Example:
+
+* displayBook()
+* issueBook()
+* returnBook()
+
+---
+
+## 🔹 Scanner Class
+
+Used to take input from user.
+
+---
+
+## 🔹 Boolean
+
+A datatype that stores true/false values.
+
+Example:
+
+```java id="q2w9ld"
+boolean isIssued;
+```
+
+---
+
+## 🔹 String
+
+Used to store text data.
+
+---
+
+## 🔹 Control Statements
+
+Used for decision making:
+
+* if-else
+* switch-case
+* do-while loop
+
+---
+
+# 🟦 **FLOWCHART (TEXT FORMAT)**
+
+1. Start program
+2. Create Book objects
+3. Initialize book details using constructor
+4. Display menu
+5. Take user choice
+6. If choice = 1 → Display books
+7. If choice = 2 → Issue book
+8. If choice = 3 → Return book
+9. If choice = 4 → Show total books
+10. If choice = 5 → Exit program
+11. Repeat menu until exit
+12. Stop program
+
+---
+
+# 🟦 **ALGORITHM (DETAILED NUMBERED STEPS)**
+
+1. Start the program execution.
+   Purpose: Begin program and initialize system resources.
+
+2. Define a class Book.
+   Purpose: Represent book properties and behavior.
+
+3. Declare data members bookId, bookName, and isIssued.
+   Purpose: Store book information and status.
+
+4. Declare static variable totalBooks.
+   Purpose: Maintain count of all books created.
+
+5. Define constructor Book(int id, String name).
+   Purpose: Initialize book details automatically when object is created.
+
+6. Increment totalBooks inside constructor.
+   Purpose: Track total number of books in library.
+
+7. Create method displayBook().
+   Purpose: Show book details and availability status.
+
+8. Create method issueBook().
+   Purpose: Change book status to issued if available.
+
+9. Create method returnBook().
+   Purpose: Change book status back to available.
+
+10. Create static method showTotalBooks().
+    Purpose: Display total number of books.
+
+11. Define main class LibraryManagement.
+    Purpose: Handle program execution.
+
+12. Create Scanner object.
+    Purpose: Accept user input.
+
+13. Create Book objects (b1, b2, b3).
+    Purpose: Store predefined book data.
+
+14. Display menu using do-while loop.
+    Purpose: Allow repeated user operations.
+
+15. Take user input using switch-case.
+    Purpose: Perform selected operation.
+
+16. Execute corresponding method based on choice.
+    Purpose: Perform book management tasks.
+
+17. Repeat menu until user selects exit option.
+    Purpose: Continuous system interaction.
+
+18. Close Scanner object.
+    Purpose: Free system resources.
+
+19. End program execution.
+
+---
+
+# 🟦 **WORKING OF EACH METHOD**
+
+---
+
+## 🔹 Constructor Book()
+
+* Initializes book ID and name
+* Sets book as available by default
+* Increases total book count
+
+---
+
+## 🔹 displayBook()
+
+* Displays book ID and name
+* Shows status: Issued or Available
+* Used for viewing library records
+
+---
+
+## 🔹 issueBook()
+
+* Checks if book is available
+* Marks book as issued
+* Prevents double issuing
+
+---
+
+## 🔹 returnBook()
+
+* Checks if book is issued
+* Marks it available again
+* Ensures correct status update
+
+---
+
+## 🔹 showTotalBooks()
+
+* Displays total number of books created
+* Uses static variable
+
+---
+
+# 🟦 **INPUT–OUTPUT EXPLANATION**
+
+---
+
+## 🔹 Input Required:
+
+User selects menu option:
+
+* 1 → View books
+* 2 → Issue book (enter Book ID)
+* 3 → Return book (enter Book ID)
+* 4 → Total books
+* 5 → Exit
+
+Example input:
+
+```id="6k8p3z"
+Enter choice: 2  
+Enter Book ID: 101
+```
+
+---
+
+## 🔹 Output Displayed:
+
+* Book details
+* Issue confirmation message
+* Return confirmation message
+* Total books count
+* Error message for invalid input
+
+Example output:
+
+```id="8z3qpl"
+Java issued successfully.
+```
+
+---
+
+# 🟦 **VIVA QUESTIONS (IMPORTANT FOR EXAM)**
+
+---
+
+### 1. Why class is used?
+
+👉 To define structure of objects like Book.
+
+---
+
+### 2. Why object is created?
+
+👉 To allocate memory and access class members.
+
+---
+
+### 3. Why constructor is used?
+
+👉 To initialize object automatically.
+
+---
+
+### 4. Why static variable is used?
+
+👉 To share data among all objects.
+
+---
+
+### 5. Why static method is used?
+
+👉 To access method without object creation.
+
+---
+
+### 6. Why Scanner is used?
+
+👉 To take user input.
+
+---
+
+### 7. What is boolean used for?
+
+👉 To store true/false status of book.
+
+---
+
+### 8. Why switch-case is used?
+
+👉 To handle multiple user options efficiently.
+
+---
+
+### 9. What happens if object is not created?
+
+👉 No memory allocation, program cannot access methods.
+
+---
+
+### 10. Why constructor is important?
+
+👉 It reduces manual initialization of data.
+

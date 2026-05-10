@@ -1,0 +1,637 @@
+Below is your **COMPLETE OOPL PRACTICAL EXAM PREPARATION (SPPU 2nd Year AIDS)** for your **Polymorphism (Shape Interface) program**.
+
+---
+
+# 🌟 PART A: EXTREMELY IMPORTANT VIVA (ORAL EXAM PREPARATION)
+
+---
+
+# ⭐ 1. BASIC VIVA QUESTIONS
+
+### 1. What is polymorphism?
+
+Polymorphism means **one interface, many implementations**.
+
+👉 In this program:
+
+* `Shape s` behaves as `Circle`
+* `Shape s` behaves as `Rectangle`
+
+---
+
+### 2. What is runtime polymorphism?
+
+Runtime polymorphism occurs when **method call is decided at runtime**.
+
+👉 Example:
+
+```java
+Shape s = new Circle();
+s.calculateArea();
+```
+
+---
+
+### 3. What is interface?
+
+Interface is a blueprint of a class containing **abstract methods only**.
+
+---
+
+### 4. Why interface is used here?
+
+To achieve:
+
+* Abstraction
+* Runtime polymorphism
+* Loose coupling
+
+---
+
+### 5. What is class?
+
+Class is a blueprint for objects.
+
+---
+
+### 6. What is object?
+
+Object is an instance of a class stored in heap memory.
+
+---
+
+### 7. Why object is created?
+
+To access class methods and variables.
+
+---
+
+### 8. Why Scanner is used?
+
+To take **runtime input from user**.
+
+---
+
+### 9. Why main method is static?
+
+So JVM can call it without creating object.
+
+---
+
+# ⭐ 2. OOP CONCEPT QUESTIONS
+
+---
+
+### 10. Where is polymorphism used?
+
+```java
+Shape s = new Circle();
+Shape s = new Rectangle();
+```
+
+---
+
+### 11. Is inheritance used here?
+
+No direct class inheritance is used.
+👉 But interface-based inheritance is used.
+
+---
+
+### 12. Why extends is not used?
+
+Because interface is implemented using `implements`, not `extends`.
+
+---
+
+### 13. Why method overriding is used?
+
+To provide **different implementation of same method**.
+
+---
+
+### 14. Difference between overloading and overriding?
+
+| Overloading                            | Overriding            |
+| -------------------------------------- | --------------------- |
+| Same method name, different parameters | Same method signature |
+| Compile time                           | Runtime               |
+
+---
+
+### 15. Why abstraction is used?
+
+Because implementation is hidden from interface.
+
+---
+
+# ⭐ 3. INTERVIEW LEVEL QUESTIONS
+
+---
+
+### 16. Why polymorphism is important?
+
+It increases:
+
+* Flexibility
+* Code reuse
+* Maintainability
+
+---
+
+### 17. Real-world example?
+
+A single button (Shape) performs different actions:
+
+* Circle → area = πr²
+* Rectangle → area = l × b
+
+---
+
+### 18. Why Shape reference is used?
+
+To achieve **dynamic method binding**.
+
+---
+
+### 19. What is dynamic binding?
+
+Method call resolved at runtime.
+
+---
+
+# ⭐ 4. TRICKY EXTERNAL EXAMINER QUESTIONS
+
+---
+
+### 20. What happens if Shape s = null is not written?
+
+No issue, but reference must be declared before use.
+
+---
+
+### 21. What if object is not created?
+
+Program will throw **NullPointerException**.
+
+---
+
+### 22. Can interface create object?
+
+❌ No, interface cannot be instantiated.
+
+---
+
+### 23. Can we write:
+
+```java
+Shape s = new Shape();
+```
+
+❌ No, compilation error.
+
+---
+
+### 24. Why calculateArea() is abstract?
+
+Because implementation differs for each shape.
+
+---
+
+### 25. What if calculateArea() is not overridden?
+
+Compilation error.
+
+---
+
+# ⭐ 5. COMPILER / RUNTIME QUESTIONS
+
+---
+
+### 26. What happens during compilation?
+
+* Java code → Bytecode (.class file)
+
+---
+
+### 27. What happens during runtime?
+
+* JVM executes bytecode
+* Objects are created in heap
+
+---
+
+### 28. What if Scanner is not closed?
+
+No major error, but **resource leak warning**.
+
+---
+
+### 29. What if main signature is changed?
+
+```java
+public static void main(String[] args)
+```
+
+❌ JVM will not recognize program.
+
+---
+
+# ⭐ 6. MEMORY BASED QUESTIONS
+
+---
+
+### 30. Where is object stored?
+
+Heap memory
+
+---
+
+### 31. Where is reference stored?
+
+Stack memory
+
+---
+
+### 32. What is garbage collection?
+
+Automatic memory cleanup by JVM.
+
+---
+
+### 33. What happens when object is null?
+
+Eligible for garbage collection.
+
+---
+
+# ⭐ 7. JVM / JDK / JRE QUESTIONS
+
+---
+
+### 34. What is JVM?
+
+Java Virtual Machine executes bytecode.
+
+---
+
+### 35. What is JRE?
+
+JRE = JVM + Libraries
+
+---
+
+### 36. What is JDK?
+
+JDK = JRE + Development tools (compiler)
+
+---
+
+### 37. Role of JVM in this program?
+
+* Executes calculateArea()
+* Manages memory
+
+---
+
+# ⭐ 8. ERROR-BASED QUESTIONS
+
+---
+
+### 38. What if extends is removed?
+
+Not applicable here, but inheritance structure breaks.
+
+---
+
+### 39. What if class name mismatch?
+
+Compilation error.
+
+---
+
+### 40. What if semicolon missing?
+
+Syntax error.
+
+---
+
+### 41. What if wrong input is given?
+
+May throw InputMismatchException.
+
+---
+
+# ⭐ 9. WHY QUESTIONS (VERY IMPORTANT)
+
+---
+
+### 42. Why class is used?
+
+To define structure of Circle and Rectangle.
+
+---
+
+### 43. Why method is used?
+
+To reuse code and perform specific task.
+
+---
+
+### 44. Why access modifier public?
+
+So JVM and other classes can access methods.
+
+---
+
+### 45. Why private variables are not used here?
+
+To simplify program and avoid getters/setters.
+
+---
+
+### 46. Why this keyword is not used?
+
+No confusion between local and instance variables.
+
+---
+
+### 47. Why super is not used?
+
+No parent class inheritance.
+
+---
+
+### 48. Why static not used in calculateArea?
+
+Because method depends on object state.
+
+---
+
+# ⭐ 10. WHAT IF QUESTIONS
+
+---
+
+### 49. What if calculateArea() is static?
+
+Polymorphism will NOT work.
+
+---
+
+### 50. What if Scanner is removed?
+
+No user input possible.
+
+---
+
+### 51. What if interface is replaced with class?
+
+Loose coupling will be lost.
+
+---
+
+# 🌟 PART B: COMPLETE CODE EXPLANATION (LINE BY LINE + DEEP THEORY)
+
+---
+
+## 🔹 IMPORT STATEMENT
+
+```java
+import java.util.Scanner;
+```
+
+### Meaning:
+
+Imports Scanner class from Java library.
+
+### Purpose:
+
+Used for user input.
+
+### Internal Working:
+
+Loads Scanner class into memory from `java.util` package.
+
+### If removed:
+
+Compilation error.
+
+---
+
+# 🔹 CLASS DECLARATION
+
+```java
+class Main {
+```
+
+### Meaning:
+
+Defines a class named Main.
+
+### Memory:
+
+Stored in Method Area.
+
+---
+
+# 🔹 MAIN METHOD
+
+```java
+public static void main(String[] args)
+```
+
+### Meaning:
+
+Entry point of program.
+
+### Breakdown:
+
+* `public` → accessible everywhere
+* `static` → no object needed
+* `void` → returns nothing
+* `String[] args` → command line arguments
+
+### If removed:
+
+Program will not run.
+
+---
+
+# 🔹 SCANNER OBJECT
+
+```java
+Scanner sc = new Scanner(System.in);
+```
+
+### Meaning:
+
+Creates input object.
+
+### Memory:
+
+* `sc` → stack
+* Scanner object → heap
+
+### If removed:
+
+No input possible.
+
+---
+
+# 🔹 INTERFACE REFERENCE
+
+```java
+Shape s = null;
+```
+
+### Meaning:
+
+Reference variable for polymorphism.
+
+### Purpose:
+
+Used to hold Circle or Rectangle object.
+
+---
+
+# 🔹 MENU DISPLAY
+
+```java
+System.out.println(...)
+```
+
+### Meaning:
+
+Prints output on screen.
+
+### Internal:
+
+Uses System class → OutputStream → console.
+
+---
+
+# 🔹 INPUT CHOICE
+
+```java
+int choice = sc.nextInt();
+```
+
+### Meaning:
+
+Reads integer input.
+
+### Memory:
+
+Stored in stack.
+
+---
+
+# 🔹 IF CONDITION
+
+```java
+if(choice == 1)
+```
+
+### Meaning:
+
+Checks condition.
+
+### Symbol meaning:
+
+* `==` → comparison operator
+
+---
+
+# 🔹 OBJECT CREATION (CIRCLE)
+
+```java
+s = new Circle(r);
+```
+
+### Meaning:
+
+Creates Circle object.
+
+### Memory:
+
+* Heap → Circle object
+* Stack → reference s
+
+### Internal:
+
+Constructor called automatically.
+
+---
+
+# 🔹 OBJECT CREATION (RECTANGLE)
+
+```java
+s = new Rectangle(l,b);
+```
+
+Same memory concept as Circle.
+
+---
+
+# 🔹 METHOD CALL
+
+```java
+s.calculateArea();
+```
+
+### Meaning:
+
+Calls overridden method.
+
+### Internal Working:
+
+* JVM checks actual object type
+* Calls correct method
+
+---
+
+# 🔹 LOOP
+
+```java
+do { } while(ans.equalsIgnoreCase("y"));
+```
+
+### Meaning:
+
+Repeats program.
+
+---
+
+# 🌟 MEMORY MODEL (VERY IMPORTANT)
+
+### STACK MEMORY:
+
+* s reference
+* variables (choice, ans)
+
+### HEAP MEMORY:
+
+* Circle object
+* Rectangle object
+
+### METHOD AREA:
+
+* Class definitions
+
+### GARBAGE COLLECTION:
+
+* Removes unused objects
+
+---
+
+# 🌟 FINAL EXAM KEY POINT
+
+👉 This program demonstrates:
+
+✔ Interface
+✔ Runtime Polymorphism
+✔ Dynamic Method Dispatch
+✔ Object Creation
+✔ User Input Handling
+✔ Looping Logic
+
